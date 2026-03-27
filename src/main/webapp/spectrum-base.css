@@ -1,0 +1,154 @@
+html[data-theme^="spectrum-"],
+html[data-theme^="spectrum-"] body,
+.app-theme-picker__picker[data-theme^="spectrum-"] {
+  --background: #ffffff;
+  --instance-accent: #2563eb;
+  --instance-accent-soft: rgba(37, 99, 235, 0.12);
+  --instance-accent-strong: rgba(37, 99, 235, 0.2);
+  --action-primary-bg: #2563eb;
+  --action-primary-border: #2563eb;
+  --action-primary-text: #ffffff;
+  --accent-color: var(--action-primary-bg);
+
+  /* Text */
+  --text-color: #1f2328;
+  --text-color-secondary: color-mix(in srgb, var(--background) 40%, var(--text-color));
+
+  /* Breadcrumbs - Deprecated */
+  --breadcrumbs-bar-background: var(--background);
+
+  /* Tabs - Deprecated */
+  --tabs-background: var(--card-border-color);
+  --tabs-item-background--selected: color-mix(in srgb, var(--background) 92%, var(--instance-accent));
+
+  /* Table */
+  --table-background: color-mix(in srgb, var(--background) 95%, var(--text-color-secondary));
+
+  /* Side panel */
+  --panel-border-color: color-mix(in srgb, var(--text-color-secondary) 15%, var(--card-background));
+
+  /* Form */
+  --input-color: color-mix(in srgb, var(--text-color-secondary) 3%, var(--background));
+  --input-border: color-mix(in srgb, var(--text-color-secondary) 30%, var(--background));
+  --input-border-hover: color-mix(in srgb, var(--text-color-secondary) 40%, var(--background));
+
+  /* Default button */
+  --button-background: oklch(from var(--text-color-secondary) l c h / 0.075);
+  --button-background--hover: oklch(from var(--text-color-secondary) l c h / 0.125);
+  --button-background--active: oklch(from var(--text-color-secondary) l c h / 0.175);
+  --button-box-shadow--focus: oklch(from var(--text-color-secondary) l c h / 0.1);
+
+  /* Variables for sidebar items, card items */
+  --item-background--hover: oklch(from var(--text-color-secondary) l c h / 0.1);
+  --item-background--active: oklch(from var(--text-color-secondary) l c h / 0.15);
+  --item-box-shadow--focus: oklch(from var(--text-color-secondary) l c h / 0.1);
+
+  /* Card */
+  --card-background: color-mix(in srgb, var(--background) 95%, var(--text-color-secondary));
+  --card-border-color: var(--prefers-contrast, color-mix(in srgb, var(--text-color-secondary) 10%, var(--card-background)));
+
+  @media (prefers-contrast: more) {
+    --prefers-contrast: var(--text-color);
+  }
+
+  /* Base palette */
+  --red: #dc2626;
+  --orange: #ea580c;
+  --yellow: #d97706;
+  --green: #16a34a;
+  --blue: #2563eb;
+  --cyan: #0891b2;
+  --teal: #0f766e;
+  --indigo: #4f46e5;
+  --purple: #7c3aed;
+  --pink: #db2777;
+  --brown: #8b5e3c;
+
+  /* Derived variants (light/dark) */
+  --light-red: oklch(from var(--red) calc(l + 0.2) c h);
+  --dark-red: oklch(from var(--red) calc(l - 0.2) c h);
+  --light-orange: oklch(from var(--orange) calc(l + 0.2) c h);
+  --dark-orange: oklch(from var(--orange) calc(l - 0.2) c h);
+  --light-yellow: oklch(from var(--yellow) calc(l + 0.2) c h);
+  --dark-yellow: oklch(from var(--yellow) calc(l - 0.2) c h);
+  --light-green: oklch(from var(--green) calc(l + 0.2) c h);
+  --dark-green: oklch(from var(--green) calc(l - 0.2) c h);
+  --light-blue: oklch(from var(--blue) calc(l + 0.2) c h);
+  --dark-blue: oklch(from var(--blue) calc(l - 0.2) c h);
+  --light-cyan: oklch(from var(--cyan) calc(l + 0.2) c h);
+  --dark-cyan: oklch(from var(--cyan) calc(l - 0.2) c h);
+  --light-teal: oklch(from var(--teal) calc(l + 0.2) c h);
+  --dark-teal: oklch(from var(--teal) calc(l - 0.2) c h);
+  --light-indigo: oklch(from var(--indigo) calc(l + 0.2) c h);
+  --dark-indigo: oklch(from var(--indigo) calc(l - 0.2) c h);
+  --light-purple: oklch(from var(--purple) calc(l + 0.2) c h);
+  --dark-purple: oklch(from var(--purple) calc(l - 0.2) c h);
+  --light-pink: oklch(from var(--pink) calc(l + 0.2) c h);
+  --dark-pink: oklch(from var(--pink) calc(l - 0.2) c h);
+  --light-brown: oklch(from var(--brown) calc(l + 0.2) c h);
+  --dark-brown: oklch(from var(--brown) calc(l - 0.2) c h);
+
+  /* Tooltips */
+  --tooltip-box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+      inset var(--jenkins-border--subtle-shadow),
+      0 0 8px 2px rgba(0, 0, 20, 0.05),
+      0 0 1px 1px rgba(0, 0, 20, 0.025),
+      0 10px 20px rgba(0, 0, 20, 0.2);
+
+  /* Dropdowns */
+  --dropdown-box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+      inset var(--jenkins-border--subtle-shadow),
+      0 0 8px 2px rgba(0, 0, 20, 0.05),
+      0 0 1px 1px rgba(0, 0, 20, 0.025),
+      0 10px 20px rgba(0, 0, 20, 0.3);
+
+  color-scheme: light;
+}
+
+html[data-theme^="spectrum-"] body {
+  --accent-color: var(--action-primary-bg);
+}
+
+.app-theme-picker__picker[data-theme^="spectrum-"] {
+  --accent-color: var(--instance-accent);
+}
+
+#page-header,
+.jenkins-header {
+  border-top: 5px solid var(--instance-accent) !important;
+}
+
+.jenkins-button--primary,
+button.jenkins-button--primary {
+  background: var(--action-primary-bg) !important;
+  border-color: var(--action-primary-border) !important;
+  color: var(--action-primary-text) !important;
+}
+
+a:hover,
+.jenkins-link:hover,
+.task-link:hover {
+  color: var(--instance-accent) !important;
+}
+
+[aria-current="page"],
+.jenkins-breadcrumbs__list-item a[aria-current="page"] {
+  color: var(--instance-accent) !important;
+  font-weight: 600;
+}
+
+.jenkins-dropdown__item:hover,
+.jenkins-menu-dropdown__item:hover {
+  background: var(--instance-accent-soft) !important;
+}
+
+:focus-visible {
+  outline-color: var(--instance-accent) !important;
+}
+
+.tab.active,
+.app-theme-picker__item input:checked + label .app-theme-picker__picker {
+  box-shadow: inset 0 0 0 1px var(--instance-accent-strong);
+}

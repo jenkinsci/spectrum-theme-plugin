@@ -1,0 +1,7 @@
+html[data-theme="spectrum-violet"],
+html[data-theme="spectrum-violet"] body,
+.app-theme-picker__picker[data-theme="spectrum-violet"] {
+  --instance-accent: #6f5bb2;
+  --instance-accent-soft: rgba(111, 91, 178, 0.12);
+  --instance-accent-strong: rgba(111, 91, 178, 0.2);
+}

@@ -1,0 +1,7 @@
+html[data-theme="spectrum-cyan"],
+html[data-theme="spectrum-cyan"] body,
+.app-theme-picker__picker[data-theme="spectrum-cyan"] {
+  --instance-accent: #2f7c8f;
+  --instance-accent-soft: rgba(47, 124, 143, 0.12);
+  --instance-accent-strong: rgba(47, 124, 143, 0.2);
+}
