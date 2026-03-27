@@ -144,11 +144,6 @@ a:hover,
   background: var(--instance-accent-soft) !important;
 }
 
-:focus-visible {
-  outline-color: var(--instance-accent) !important;
-}
-
-.tab.active,
 .app-theme-picker__item input:checked + label .app-theme-picker__picker {
   box-shadow: inset 0 0 0 1px var(--instance-accent-strong);
 }
