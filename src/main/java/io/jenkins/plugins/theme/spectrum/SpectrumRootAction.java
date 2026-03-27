@@ -9,6 +9,7 @@ import java.util.Set;
 import jenkins.model.Jenkins;
 import org.kohsuke.stapler.StaplerRequest2;
 import org.kohsuke.stapler.StaplerResponse2;
+import org.kohsuke.stapler.verb.GET;
 
 @Extension
 public class SpectrumRootAction implements UnprotectedRootAction {
@@ -39,6 +40,8 @@ public class SpectrumRootAction implements UnprotectedRootAction {
         return "theme-" + AbstractSpectrumTheme.ID;
     }
 
+    @GET
+    @SuppressWarnings({"lgtm[jenkins/no-permission-check]", "lgtm[jenkins/csrf]"})
     public void doDynamic(StaplerRequest2 req, StaplerResponse2 rsp) throws IOException, ServletException {
         String cssFile = req.getRestOfPath();
         if (cssFile.startsWith("/")) {

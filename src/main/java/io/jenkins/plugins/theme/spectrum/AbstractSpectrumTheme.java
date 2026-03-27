@@ -6,6 +6,7 @@ import io.jenkins.plugins.thememanager.ThemeManagerFactory;
 import io.jenkins.plugins.thememanager.ThemeManagerFactoryDescriptor;
 import java.util.List;
 
+@SuppressWarnings("lgtm[jenkins/plaintext-password-storage]")
 abstract class AbstractSpectrumTheme extends ThemeManagerFactory {
 
     static final String ID = "spectrum";
