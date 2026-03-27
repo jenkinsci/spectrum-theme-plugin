@@ -152,3 +152,11 @@ a:hover,
 .app-theme-picker__item input:checked + label .app-theme-picker__picker {
   box-shadow: inset 0 0 0 1px var(--instance-accent-strong);
 }
+
+/* Search highlight */
+.search-highlight,
+.jenkins-search__results-item--highlighted,
+.jenkins-search__highlight {
+  background: var(--instance-accent-soft) !important;
+  color: var(--instance-accent) !important;
+}
