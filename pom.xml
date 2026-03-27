@@ -50,7 +50,7 @@
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
         <artifactId>bom-${jenkins.baseline}.x</artifactId>
-        <version>6077.v303e2d08985d</version>
+        <version>6166.va_a_8b_5eda_8ef5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -61,7 +61,6 @@
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>theme-manager</artifactId>
-      <version>327.v780d7096ec29</version>
     </dependency>
 
     <dependency>
