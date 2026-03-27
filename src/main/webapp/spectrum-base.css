@@ -120,50 +120,50 @@ html[data-theme^="spectrum-"] body {
   --accent-color: var(--instance-accent);
 }
 
-#page-header,
-.jenkins-header {
+html[data-theme^="spectrum-"] #page-header,
+html[data-theme^="spectrum-"] .jenkins-header {
   border-top: 5px solid var(--instance-accent) !important;
 }
 
-.jenkins-button--primary,
-button.jenkins-button--primary {
+html[data-theme^="spectrum-"] .jenkins-button--primary,
+html[data-theme^="spectrum-"] button.jenkins-button--primary {
   background: var(--action-primary-bg) !important;
   border-color: var(--action-primary-border) !important;
   color: var(--action-primary-text) !important;
 }
 
-a:hover,
-.jenkins-link:hover,
-.task-link:hover {
+html[data-theme^="spectrum-"] a:hover,
+html[data-theme^="spectrum-"] .jenkins-link:hover,
+html[data-theme^="spectrum-"] .task-link:hover {
   color: var(--instance-accent) !important;
 }
 
-[aria-current="page"],
-.jenkins-breadcrumbs__list-item a[aria-current="page"] {
+html[data-theme^="spectrum-"] [aria-current="page"],
+html[data-theme^="spectrum-"] .jenkins-breadcrumbs__list-item a[aria-current="page"] {
   color: var(--instance-accent) !important;
   font-weight: 600;
 }
 
-.jenkins-dropdown__item:hover,
-.jenkins-menu-dropdown__item:hover {
+html[data-theme^="spectrum-"] .jenkins-dropdown__item:hover,
+html[data-theme^="spectrum-"] .jenkins-menu-dropdown__item:hover {
   background: var(--instance-accent-soft) !important;
 }
 
-.tabBar .tab.active a,
-.tabBar .tab a[aria-selected="true"],
-.tabBar .tab a[aria-current="page"] {
+html[data-theme^="spectrum-"] .tabBar .tab.active a,
+html[data-theme^="spectrum-"] .tabBar .tab a[aria-selected="true"],
+html[data-theme^="spectrum-"] .tabBar .tab a[aria-current="page"] {
   background: color-mix(in srgb, var(--background) 94%, var(--instance-accent)) !important;
   box-shadow: inset 0 -1px 0 0 var(--instance-accent) !important;
 }
 
-.app-theme-picker__item input:checked + label .app-theme-picker__picker {
+.app-theme-picker__item input:checked + label .app-theme-picker__picker[data-theme^="spectrum-"] {
   box-shadow: inset 0 0 0 1px var(--instance-accent-strong);
 }
 
 /* Search highlight */
-.search-highlight,
-.jenkins-search__results-item--highlighted,
-.jenkins-search__highlight {
+html[data-theme^="spectrum-"] .search-highlight,
+html[data-theme^="spectrum-"] .jenkins-search__results-item--highlighted,
+html[data-theme^="spectrum-"] .jenkins-search__highlight {
   background: var(--instance-accent-soft) !important;
   color: var(--instance-accent) !important;
 }
