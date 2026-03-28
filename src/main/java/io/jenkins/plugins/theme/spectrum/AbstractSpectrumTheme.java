@@ -23,6 +23,7 @@ abstract class AbstractSpectrumTheme extends ThemeManagerFactory {
 
     abstract static class DescriptorImpl extends ThemeManagerFactoryDescriptor {
         private final String displayName;
+
         @SuppressWarnings("lgtm[jenkins/plaintext-storage]")
         private final String themeKey;
 
