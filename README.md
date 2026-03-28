@@ -1,5 +1,9 @@
 # Spectrum Theme Plugin
 
+[![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/spectrum-theme.svg)](https://plugins.jenkins.io/spectrum-theme/)
+[![Jenkins Security Scan](https://github.com/jenkinsci/spectrum-theme-plugin/actions/workflows/jenkins-security-scan.yml/badge.svg)](https://github.com/jenkinsci/spectrum-theme-plugin/actions/workflows/jenkins-security-scan.yml)
+[![License](https://img.shields.io/github/license/jenkinsci/spectrum-theme-plugin)](LICENSE.md)
+
 中文说明见 [README.zh-CN.md](README.zh-CN.md)。
 
 Spectrum Theme provides seven accent-driven Jenkins themes inspired by rainbow colors.

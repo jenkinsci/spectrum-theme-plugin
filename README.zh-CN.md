@@ -1,5 +1,9 @@
 # Spectrum Theme Plugin
 
+[![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/spectrum-theme.svg)](https://plugins.jenkins.io/spectrum-theme/)
+[![Jenkins Security Scan](https://github.com/jenkinsci/spectrum-theme-plugin/actions/workflows/jenkins-security-scan.yml/badge.svg)](https://github.com/jenkinsci/spectrum-theme-plugin/actions/workflows/jenkins-security-scan.yml)
+[![License](https://img.shields.io/github/license/jenkinsci/spectrum-theme-plugin)](LICENSE.md)
+
 Spectrum Theme 提供 7 种灵感来自彩虹色的 Jenkins 主题。
 配色做了适度柔化与平衡，便于在日常使用中识别不同实例。
 
