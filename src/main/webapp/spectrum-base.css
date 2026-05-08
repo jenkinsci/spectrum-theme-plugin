@@ -138,8 +138,8 @@ html[data-theme^="spectrum-"] .task-link:hover {
   color: var(--instance-accent) !important;
 }
 
-html[data-theme^="spectrum-"] [aria-current="page"],
-html[data-theme^="spectrum-"] .jenkins-breadcrumbs__list-item a[aria-current="page"] {
+html[data-theme^="spectrum-"] .jenkins-breadcrumbs__list-item[aria-current="page"],
+html[data-theme^="spectrum-"] .jenkins-breadcrumbs__list-item [aria-current="page"] {
   color: var(--instance-accent) !important;
   font-weight: 600;
 }

@@ -39,6 +39,43 @@ public class AppearancePage extends JenkinsPage<AppearancePage> {
         return this;
     }
 
+    public AppearancePage injectCurrentPageFixtures() {
+        log.info("Injecting breadcrumb and pagination fixtures");
+        page.evaluate("""
+            () => {
+              document.querySelector('#accent-scope-fixtures')?.remove();
+              document.body.insertAdjacentHTML('beforeend', `
+                <section id="accent-scope-fixtures" style="margin: 24px; display: grid; gap: 12px;">
+                  <nav class="jenkins-breadcrumbs" aria-label="Breadcrumb">
+                    <ol class="jenkins-breadcrumbs__list" style="color: rgb(11, 22, 33);">
+                      <li class="jenkins-breadcrumbs__list-item">
+                        <span id="test-breadcrumb-current" aria-current="page">Current breadcrumb</span>
+                      </li>
+                    </ol>
+                  </nav>
+                  <nav aria-label="Pagination" style="color: rgb(44, 55, 66); font-weight: 400;">
+                    <span id="test-pagination-current" aria-current="page">2</span>
+                  </nav>
+                </section>
+              `);
+            }""");
+        return this;
+    }
+
+    public AppearancePage breadcrumbCurrentPageUsesAccent() {
+        log.info("Checking that breadcrumb current-page styling uses the theme accent");
+        checkComputedStyle("#test-breadcrumb-current", "color", resolveColor("var(--instance-accent)"));
+        checkComputedStyle("#test-breadcrumb-current", "font-weight", "600");
+        return this;
+    }
+
+    public AppearancePage paginationCurrentPageKeepsLocalStyle() {
+        log.info("Checking that non-breadcrumb current-page styling keeps local styles");
+        checkComputedStyle("#test-pagination-current", "color", "rgb(44, 55, 66)");
+        checkComputedStyle("#test-pagination-current", "font-weight", "400");
+        return this;
+    }
+
     private Locator getThemeCard(Theme theme) {
         log.debug("Locating theme box for '{}'", theme);
         return page.getByRole(AriaRole.RADIO, new GetByRoleOptions().setName(theme.name()))
