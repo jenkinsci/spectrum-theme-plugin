@@ -17,4 +17,15 @@ public class SpectrumThemeTest {
             appearancePage.themeIsPresent(theme).selectTheme(theme).themeIsApplied(theme);
         }
     }
+
+    @Test
+    void currentPageAccentIsScopedToBreadcrumbs(JenkinsRule j, Page p) {
+        new AppearancePage(p, j.jenkins.getRootUrl())
+                .goTo()
+                .selectTheme(Theme.SPECTRUM_BLUE)
+                .themeIsApplied(Theme.SPECTRUM_BLUE)
+                .injectCurrentPageFixtures()
+                .breadcrumbCurrentPageUsesAccent()
+                .paginationCurrentPageKeepsLocalStyle();
+    }
 }
