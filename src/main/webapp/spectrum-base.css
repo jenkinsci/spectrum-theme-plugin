@@ -132,9 +132,9 @@ html[data-theme^="spectrum-"] button.jenkins-button--primary {
   color: var(--action-primary-text) !important;
 }
 
-html[data-theme^="spectrum-"] a:hover,
-html[data-theme^="spectrum-"] .jenkins-link:hover,
-html[data-theme^="spectrum-"] .task-link:hover {
+html[data-theme^="spectrum-"] a:not(.jenkins-button):hover,
+html[data-theme^="spectrum-"] .jenkins-link:not(.jenkins-button):hover,
+html[data-theme^="spectrum-"] .task-link:not(.jenkins-button):hover {
   color: var(--instance-accent) !important;
 }
 
@@ -154,6 +154,17 @@ html[data-theme^="spectrum-"] .tabBar .tab a[aria-selected="true"],
 html[data-theme^="spectrum-"] .tabBar .tab a[aria-current="page"] {
   background: color-mix(in srgb, var(--background) 94%, var(--instance-accent)) !important;
   box-shadow: inset 0 -1px 0 0 var(--instance-accent) !important;
+}
+
+/* Keep button labels and counts readable when selected/pressed states switch to a blue action surface. */
+html[data-theme^="spectrum-"] .jenkins-button[aria-current="page"],
+html[data-theme^="spectrum-"] .jenkins-button[aria-pressed="true"] {
+  color: var(--action-primary-text) !important;
+}
+
+html[data-theme^="spectrum-"] .jenkins-button[aria-current="page"] *,
+html[data-theme^="spectrum-"] .jenkins-button[aria-pressed="true"] * {
+  color: inherit !important;
 }
 
 .app-theme-picker__item input:checked + label .app-theme-picker__picker[data-theme^="spectrum-"] {

@@ -26,6 +26,9 @@ public class SpectrumThemeTest {
                 .themeIsApplied(Theme.SPECTRUM_BLUE)
                 .injectCurrentPageFixtures()
                 .breadcrumbCurrentPageUsesAccent()
-                .paginationCurrentPageKeepsLocalStyle();
+                .paginationCurrentPageKeepsLocalStyle()
+                .pressedButtonCountKeepsButtonContrast()
+                .pressedLinkCountKeepsButtonContrast()
+                .hoveredPrimaryLinkKeepsButtonContrast();
     }
 }
