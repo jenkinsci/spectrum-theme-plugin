@@ -40,7 +40,7 @@ public class AppearancePage extends JenkinsPage<AppearancePage> {
     }
 
     public AppearancePage injectCurrentPageFixtures() {
-        log.info("Injecting breadcrumb and pagination fixtures");
+        log.info("Injecting breadcrumb, pagination, and button/link contrast fixtures");
         page.evaluate("""
             () => {
               document.querySelector('#accent-scope-fixtures')?.remove();
@@ -56,6 +56,26 @@ public class AppearancePage extends JenkinsPage<AppearancePage> {
                   <nav aria-label="Pagination" style="color: rgb(44, 55, 66); font-weight: 400;">
                     <span id="test-pagination-current" aria-current="page">2</span>
                   </nav>
+                  <button
+                    id="test-pressed-button"
+                    class="jenkins-button"
+                    type="button"
+                    aria-pressed="true"
+                    style="background: rgb(37, 99, 235); border: 1px solid rgb(37, 99, 235); color: rgb(255, 255, 255) !important;"
+                  >
+                    Builds
+                    <span id="test-pressed-button-count" style="color: var(--instance-accent); font-weight: 600;">2</span>
+                  </button>
+                  <a
+                    id="test-pressed-link"
+                    class="jenkins-button jenkins-submit-button jenkins-button--primary secret-guard-filter-link secret-guard-results-link"
+                    href="#"
+                    aria-pressed="true"
+                    style="background: rgb(37, 99, 235); border: 1px solid rgb(37, 99, 235); color: rgb(255, 255, 255) !important; display: inline-flex; gap: 4px; text-decoration: none;"
+                  >
+                    With Findings
+                    <span id="test-pressed-link-count" style="color: var(--instance-accent); font-weight: 600;">(5)</span>
+                  </a>
                 </section>
               `);
             }""");
@@ -73,6 +93,26 @@ public class AppearancePage extends JenkinsPage<AppearancePage> {
         log.info("Checking that non-breadcrumb current-page styling keeps local styles");
         checkComputedStyle("#test-pagination-current", "color", "rgb(44, 55, 66)");
         checkComputedStyle("#test-pagination-current", "font-weight", "400");
+        return this;
+    }
+
+    public AppearancePage pressedButtonCountKeepsButtonContrast() {
+        log.info("Checking that pressed button counts inherit the button foreground");
+        checkComputedStyle("#test-pressed-button-count", "color", "rgb(255, 255, 255)");
+        return this;
+    }
+
+    public AppearancePage pressedLinkCountKeepsButtonContrast() {
+        log.info("Checking that pressed link-button counts inherit the button foreground");
+        checkComputedStyle("#test-pressed-link-count", "color", "rgb(255, 255, 255)");
+        return this;
+    }
+
+    public AppearancePage hoveredPrimaryLinkKeepsButtonContrast() {
+        log.info("Checking that hovered primary link-buttons do not switch back to the accent color");
+        page.locator("#test-pressed-link").hover();
+        checkComputedStyle("#test-pressed-link", "color", "rgb(255, 255, 255)");
+        checkComputedStyle("#test-pressed-link-count", "color", "rgb(255, 255, 255)");
         return this;
     }
 
